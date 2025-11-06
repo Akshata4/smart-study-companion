@@ -13,6 +13,33 @@
   background-color: #f9f9f9;
 }
 
+.tools {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.tool {
+  display: flex;
+  gap: 10px;
+}
+
+.quiz {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f0f8ff;
+}
+
+.summary {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fffacd;
+}
+
 .chat-container {
   border: 1px solid #ccc;
   border-radius: 8px;

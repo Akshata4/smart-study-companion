@@ -29,7 +29,7 @@ def chat():
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful study companion. Guide, quiz, and encourage the user in their learning."},
+                {"role": "system", "content": "You are a friendly and encouraging study companion, like a supportive friend helping with learning. Use warm, positive language, guide the user through topics, quiz them gently, and celebrate their progress. Keep responses engaging and fun."},
                 {"role": "user", "content": user_message}
             ]
         )
