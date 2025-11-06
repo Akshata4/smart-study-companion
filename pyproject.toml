@@ -1,0 +1,12 @@
+[project]
+name = "smart-study-companion"
+version = "0.1.0"
+description = "AI-powered learning assistant that makes studying more personal, fun, and human"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "flask>=3.1.2",
+    "flask-cors>=6.0.1",
+    "openai>=2.7.1",
+    "python-dotenv>=1.2.1",
+]
