@@ -1,49 +1,127 @@
 .App {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-content {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topic-selection {
+  border: 1px solid #a8d5ba;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f0f9f0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #2d5016;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #2d5016;
+  border-bottom: 2px solid #4a7c59;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .progress {
-  margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #a8d5ba;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #f0f9f0;
+  font-size: 14px;
 }
 
 .tools {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 20px;
 }
 
 .tool {
   display: flex;
+  flex-direction: column;
   gap: 10px;
+  padding: 15px;
+  border: 1px solid #a8d5ba;
+  border-radius: 8px;
+  background-color: #f0f9f0;
+  min-width: 250px;
 }
 
-.quiz {
-  margin-bottom: 20px;
-  padding: 10px;
+.learn-tool {
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: bold;
+}
+
+select, input {
+  padding: 8px;
   border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.quiz-section, .summary-section {
+  margin-top: 20px;
+}
+
+.quiz, .summary {
+  padding: 15px;
+  border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f0f8ff;
 }
 
 .summary {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   background-color: #fffacd;
 }
 
+.question {
+  margin-bottom: 15px;
+}
+
+.chat-section h2 {
+  margin-bottom: 10px;
+}
+
 .chat-container {
-  border: 1px solid #ccc;
+  border: 1px solid #a8d5ba;
   border-radius: 8px;
-  height: 500px;
+  min-height: 200px;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
 }
@@ -56,45 +134,144 @@
 
 .message {
   margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 6px;
+  white-space: pre-wrap;
 }
 
 .message.user {
-  background-color: #007bff;
+  background-color: #4a7c59;
   color: white;
   text-align: right;
 }
 
 .message.ai {
-  background-color: #f1f1f1;
+  background-color: #d4edda;
   color: black;
+}
+
+.streaming {
+  background: linear-gradient(90deg, #d4edda 25%, #b8d4c0 50%, #d4edda 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .input-container {
   display: flex;
   padding: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #a8d5ba;
+  background-color: #f0f9f0;
 }
 
-input {
+input[type="text"] {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 10px;
 }
 
 button {
-  padding: 8px 16px;
-  background-color: #007bff;
+  padding: 10px 16px;
+  background-color: #4a7c59;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #3a5c46;
 }
 
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.top-panel {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-section .main-bar {
+  background-color: #2d5016;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.progress-section .main-bar h2 {
+  color: white;
+  margin: 0;
+}
+
+.mini-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  background-color: #a8d5ba;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.workspace .tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.workspace .tabs button {
+  flex: 1;
+  padding: 10px;
+  background-color: #d4edda;
+  border: none;
+  cursor: pointer;
+}
+
+.workspace .tabs button.active {
+  background-color: #4a7c59;
+  color: white;
+}
+
+.learn-content, .quiz-content, .plan-content {
+  padding: 15px;
+  border: 1px solid #a8d5ba;
+  border-radius: 8px;
+  background-color: #f0f9f0;
+  margin-bottom: 20px;
+}
+
+.plan-content .week {
+  margin-bottom: 15px;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.question label {
+  display: block;
+  margin: 5px 0;
+}
+
+.chat-strip {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.chat-strip .messages {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 10px;
 }
