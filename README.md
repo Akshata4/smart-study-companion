@@ -1,5 +1,8 @@
 # smart-study-companion
+<img width="2848" height="1600" alt="image" src="https://github.com/user-attachments/assets/e18625a2-8b13-4e14-aa2c-bee2555840fb" />
 Smart Study Companion is an AI-powered learning assistant that makes studying more personal, fun, and human. It adapts to each student’s pace, tone, and skill level turning study sessions into friendly, interactive conversations.
+
+
 
 ## Setup
 
